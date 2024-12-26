@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="shortcut icon" href="asset/keranjang-removebg-preview.png">
+</head>
+
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <h2>Register</h2>
+            <form id="regisform" onsubmit="return validateForm()">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Konfirmasi Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Ulangi password"
+                        required>
+                </div>
+                <button type="submit" class="btn">Daftar</button>
+            </form>
+            <p class="login-link">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+        </div>
+    </div>
+
+    <!-- awal javascript -->
+    <script>
+        function validateForm() {
+            // Mendapatkan nilai dari input form
+            const username = document.getElementById("username").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            // Validasi Username
+            if (username.length < 3) {
+                alert("Username harus memiliki minimal 3 karakter.");
+                return false;
+            }
+
+            // Validasi Email
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                alert("Masukkan email yang valid.");
+                return false;
+            }
+
+            // Validasi Password
+            if (password.length < 6) {
+                alert("Password harus memiliki minimal 6 karakter.");
+                return false;
+            }
+
+            // Validasi Konfirmasi Password
+            if (password !== confirmPassword) {
+                alert("Password dan konfirmasi password tidak cocok.");
+                return false;
+            }
+
+            // Jika semua validasi lolos
+            alert("Registrasi berhasil!");
+            return true;
+        }
+    </script>
+
+    <!-- akhir javascript -->
+</body>
+
+</html>

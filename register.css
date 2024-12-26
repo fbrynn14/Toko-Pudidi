@@ -1,0 +1,134 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* Container Register */
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.register-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Grup Input */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-group input:focus {
+    border-color: #6b73ff;
+    outline: none;
+}
+
+/* Tombol */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #6b73ff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #5a63e0;
+}
+
+/* Link Login */
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-link a {
+    color: #6b73ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivitas untuk layar kecil */
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+        /* Menambahkan ruang ekstra untuk kenyamanan */
+    }
+
+    .register-container {
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        /* Mengurangi shadow pada layar kecil */
+    }
+
+    .register-box h2 {
+        font-size: 20px;
+        /* Mengurangi ukuran font pada judul */
+    }
+
+    .input-group input {
+        padding: 8px;
+        /* Mengurangi padding input untuk layar kecil */
+        font-size: 12px;
+        /* Ukuran font lebih kecil */
+    }
+
+    .btn {
+        padding: 10px;
+        /* Penyesuaian padding tombol */
+        font-size: 14px;
+        /* Mengurangi ukuran font tombol */
+    }
+
+    .register-link {
+        font-size: 12px;
+        /* Ukuran teks daftar lebih kecil */
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="asset/keranjang-removebg-preview.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <nav>
+        <div class="atas">
+            <a href="login.html">
+                <img src="asset/keranjang-removebg-preview.png" alt="logo">
+                TokoPudidi
+            </a>
+        </div>
+        <div class="toggle-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="menu">
+            <li><a href="login.html" id="sub1">Beranda</a></li>
+            <li><a href="login.html" id="sub1">Transaksi</a></li>
+            <li><a href="login.html" id="sub1">Profil</a></li>
+            <li><a href="login.html" id="sub">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <section class="content">
+        <h1>Produk Kami</h1>
+        <div class="product-grid">
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <img src="asset/gambar1.jpg" alt="Produk 1">
+                <h3>Fihi Ma Fihi (Jalaludin Rumi)</h3>
+                <p>Rp 90.000</p>
+                <button onclick="location.href='login.html'">Beli Sekarang</button>
+            </div>
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <img src="asset/gambar2.jpg" alt="Produk 2">
+                <h3>Madilog (Tan Malaka)</h3>
+                <p>Rp 150.000</p>
+                <button onclick="location.href='login.html'">Beli Sekarang</button>
+            </div>
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <img src="asset/gambar3.jpg" alt="Produk 3">
+                <h3>Filosofi Teras (Henry Manampiring)</h3>
+                <p>Rp 88.000</p>
+                <button onclick="location.href='login.html'">Beli Sekarang</button>
+            </div>
+            <!-- Produk 4 -->
+            <div class="product-card">
+                <img src="asset/gambar4.jpg" alt="Produk 4">
+                <h3>Laut Bercerita (Leila S. Chudori)</h3>
+                <p>Rp 87.500</p>
+                <button onclick="location.href='login.html'">Beli Sekarang</button>
+            </div>
+            <!-- Produk 5 -->
+            <div class="product-card">
+                <img src="asset/gambar5.jpg" alt="Produk 5">
+                <h3>Dari Penjara Ke Penjara (Tan Malaka)</h3>
+                <p>Rp 100.000</p>
+                <button onclick="location.href='login.html'">Beli Sekarang</button>
+            </div>
+            <!-- Produk 6 -->
+            <div class="product-card">
+                <img src="asset/gambar6.jpg" alt="Produk 6">
+                <h3>Ayat Ayat Kiri (Karl Marx)</h3>
+                <p>Rp 55.000</p>
+                <button onclick="location.href='login.html'">Beli Sekarang</button>
+            </div>
+        </div>
+
+        <!-- Panduan Awal -->
+        <div class="guidelines">
+            <h2>Panduan Awal Menggunakan Website</h2>
+            <ol>
+                <li>Gunakan menu navigasi di bagian atas untuk berpindah antar halaman.</li>
+                <li>Pilih produk dari daftar yang tersedia.</li>
+                <li>Klik tombol <strong>'Beli Sekarang'</strong> untuk memulai proses pembelian.</li>
+            </ol>
+            <p><em>Selamat berbelanja di TokoPudidi!</em></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Tentang Kami -->
+            <div class="footer-about">
+                <h3>Tentang Kami</h3>
+                <p>Kami adalah e-commerce terpercaya yang menyediakan buku yang berkualitas dan pastinya akan menambah ilmu bagi.
+                </p>
+            </div>
+            <!-- Tautan Penting -->
+            <div class="footer-links">
+                <h3>Tautan Penting</h3>
+                <ul>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Tentang Kami</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Produk</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Kontak</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">FAQ</a></li>
+                </ul>
+            </div>
+            <!-- Kontak Kami -->
+            <div class="footer-contact">
+                <h3>Kontak Kami</h3>
+                <p>Email: akbarfebriyan69@gmail.com</p>
+                <p>Telepon: +62 857-1104-5653</p>
+                <div class="social-media">
+                    <a href="https://web.facebook.com/makbarfebriyan.akbarfebriyan.7/"><img src="asset/fb.png" alt="Facebook"></a>
+                    <a href="https://fbrynn14.github.io/Website-Personal/"><img src="asset/logoweb.png" alt="Web Kami"></a>
+                    <a href="https://www.instagram.com/mhmd_abr14/"><img src="asset/ig.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-Commerce. Jangan Pernah Bosan Untuk Membaca.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

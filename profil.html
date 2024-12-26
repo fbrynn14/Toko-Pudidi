@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="profil.css">
+    <link rel="shortcut icon" href="asset/keranjang-removebg-preview.png">
+</head>
+
+<body>
+    <!-- awal header -->
+
+    <nav>
+        <div class="atas">
+            <a href="home.html">
+                <img src="asset/keranjang-removebg-preview.png" alt="logo">
+                TokoPudidi
+            </a>
+        </div>
+        <div class="toggle-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="menu">
+            <li><a href="home.html" id="sub1">Beranda</a></li>
+            <li><a href="transaksi.html" id="sub1">Transaksi</a></li>
+            <li><a href="profil.html" id="sub1">Profil</a></li>
+            <li><a href="login.html" id="sub">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- akhir header -->
+
+    <!-- awal profil -->
+    <main>
+        <section class="profile">
+            <h1>Profil Aplikasi</h1>
+            <div class="description">
+                <p>
+                    <strong>TokoPudidi</strong> adalah aplikasi e-commerce sederhana yang dirancang untuk mempermudah
+                    pengguna dalam melakukan transaksi pembelian buku. Aplikasi ini memiliki fitur seperti
+                    pencatatan transaksi, daftar produk, dan pengelolaan data transaksi untuk mendukung pengalaman
+                    pengguna
+                    yang lebih baik.
+                </p>
+                <p>
+                    Dengan antarmuka yang ramah pengguna dan desain responsif, aplikasi ini dapat diakses dengan mudah
+                    melalui berbagai perangkat, baik desktop maupun seluler.
+                </p>
+                <h2>Fitur Utama:</h2>
+                <ul>
+                    <li>Pencatatan transaksi secara langsung.</li>
+                    <li>Daftar produk yang dapat dikelola dengan mudah.</li>
+                    <li>Desain responsif untuk kenyamanan akses.</li>
+                    <li>Fungsi login untuk menjaga keamanan data pengguna.</li>
+                </ul>
+                <p>
+                    Kami berkomitmen untuk terus meningkatkan layanan kami demi memberikan pengalaman terbaik bagi para
+                    pengguna.
+                </p>
+            </div>
+        </section>
+    </main>
+    <!-- akhir profil -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Tentang Kami -->
+            <div class="footer-about">
+                <h3>Tentang Kami</h3>
+                <p>Kami adalah e-commerce terpercaya yang menyediakan buku yang berkualitas dan pastinya akan menambah
+                    ilmu bagi.
+                </p>
+            </div>
+            <!-- Tautan Penting -->
+            <div class="footer-links">
+                <h3>Tautan Penting</h3>
+                <ul>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Tentang Kami</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Produk</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Kontak</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">FAQ</a></li>
+                </ul>
+            </div>
+            <!-- Kontak Kami -->
+            <div class="footer-contact">
+                <h3>Kontak Kami</h3>
+                <p>Email: akbarfebriyan69@gmail.com</p>
+                <p>Telepon: +62 857-1104-5653</p>
+                <div class="social-media">
+                    <a href="https://web.facebook.com/makbarfebriyan.akbarfebriyan.7/"><img src="asset/fb.png"
+                            alt="Facebook"></a>
+                    <a href="https://fbrynn14.github.io/Website-Personal/"><img src="asset/logoweb.png"
+                            alt="Web Kami"></a>
+                    <a href="https://www.instagram.com/mhmd_abr14/"><img src="asset/ig.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-Commerce. Jangan Pernah Bosan Untuk Membaca.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

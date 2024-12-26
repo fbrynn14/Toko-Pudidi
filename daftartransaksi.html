@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Transaksi</title>
+    <link rel="stylesheet" href="daftartransaksi.css">
+    <link rel="shortcut icon" href="asset/keranjang-removebg-preview.png">
+</head>
+
+<body>
+    <nav>
+        <div class="atas">
+            <a href="home.html">
+                <img src="asset/keranjang-removebg-preview.png" alt="logo">
+                TokoPudidi
+            </a>
+        </div>
+        <div class="toggle-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="menu">
+            <li><a href="home.html" id="sub1">Beranda</a></li>
+            <li><a href="transaksi.html" id="sub1">Transaksi</a></li>
+            <li><a href="profil.html" id="sub1">Profil</a></li>
+            <li><a href="login.html" id="sub">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Daftar Transaksi</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Transaksi</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Kategori Metode Pembayaran</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTable">
+                <!-- Data transaksi akan dimuat di sini -->
+            </tbody>
+        </table>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Tentang Kami -->
+            <div class="footer-about">
+                <h3>Tentang Kami</h3>
+                <p>Kami adalah e-commerce terpercaya yang menyediakan buku yang berkualitas dan pastinya akan menambah
+                    ilmu bagi.
+                </p>
+            </div>
+            <!-- Tautan Penting -->
+            <div class="footer-links">
+                <h3>Tautan Penting</h3>
+                <ul>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Tentang Kami</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Produk</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Kontak</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">FAQ</a></li>
+                </ul>
+            </div>
+            <!-- Kontak Kami -->
+            <div class="footer-contact">
+                <h3>Kontak Kami</h3>
+                <p>Email: akbarfebriyan69@gmail.com</p>
+                <p>Telepon: +62 857-1104-5653</p>
+                <div class="social-media">
+                    <a href="https://web.facebook.com/makbarfebriyan.akbarfebriyan.7/"><img src="asset/fb.png"
+                            alt="Facebook"></a>
+                    <a href="https://fbrynn14.github.io/Website-Personal/"><img src="asset/logoweb.png"
+                            alt="Web Kami"></a>
+                    <a href="https://www.instagram.com/mhmd_abr14/"><img src="asset/ig.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-Commerce. Jangan Pernah Bosan Untuk Membaca.</p>
+        </div>
+    </footer>
+
+    <!-- akhir footer -->
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        // Ambil data dari Local Storage
+        const transaksi = JSON.parse(localStorage.getItem('transaksi')) || [];
+
+        // Tampilkan data ke tabel
+        const tableBody = document.getElementById('transactionTable');
+        transaksi.forEach((item, index) => {
+            const row = `<tr>
+        <td>${index + 1}</td>
+        <td>${item.namaTransaksi}</td>
+        <td>${item.jumlah}</td>
+        <td>${item.kategori}</td>
+        <td>${item.metodePembayaran}</td>
+    </tr>`;
+            tableBody.innerHTML += row;
+        });
+    </script>
+</body>
+
+</html>

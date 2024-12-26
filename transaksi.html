@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi</title>
+    <link rel="stylesheet" href="transaksi.css">
+    <link rel="shortcut icon" href="asset/keranjang-removebg-preview.png">
+</head>
+
+<body>
+    <!-- awal header -->
+    <nav>
+        <div class="atas">
+            <a href="home.html">
+                <img src="asset/keranjang-removebg-preview.png" alt="logo">
+                TokoPudidi
+            </a>
+        </div>
+        <div class="toggle-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="menu">
+            <li><a href="home.html" id="sub1">Beranda</a></li>
+            <li><a href="transaksi.html" id="sub1">Transaksi</a></li>
+            <li><a href="profil.html" id="sub1">Profil</a></li>
+            <li><a href="login.html" id="sub">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- akhir header -->
+
+    <main>
+        <h1>Form Transaksi</h1>
+        <form id="formTransaksi">
+            <label for="namaProduk">Nama Produk</label>
+            <input type="text" id="namaProduk" name="namaProduk" readonly>
+
+            <label for="hargaProduk">Harga</label>
+            <input type="text" id="hargaProduk" name="hargaProduk" readonly>
+
+            <label for="jumlah">Jumlah</label>
+            <input type="number" id="jumlah" name="jumlah" min="1" value="1">
+
+            <label for="totalHarga">Total Harga</label>
+            <input type="text" id="totalHarga" name="totalHarga" readonly>
+
+            <label for="alamat">Alamat Pengiriman</label>
+            <input id="alamat" name="alamat" rows="4" placeholder="Masukkan alamat lengkap Anda" required>
+
+            <!-- Metode Pembayaran -->
+            <label for="metodePembayaran">Metode Pembayaran</label>
+            <select id="metodePembayaran" name="metodePembayaran" required>
+                <option value="" disabled selected>Pilih Metode Pembayaran</option>
+                <option value="Virtual Account">Virtual Account</option>
+                <option value="QRIS">QRIS</option>
+                <option value="COD">Cash on Delivery (COD)</option>
+            </select>
+
+            <div id="infoPembayaran" style="margin-top: 10px; text-align: center;"></div>
+
+            <button type="button" id="prosesPesanan">Proses Pesanan</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Tentang Kami -->
+            <div class="footer-about">
+                <h3>Tentang Kami</h3>
+                <p>Kami adalah e-commerce terpercaya yang menyediakan buku yang berkualitas dan pastinya akan menambah
+                    ilmu bagi.
+                </p>
+            </div>
+            <!-- Tautan Penting -->
+            <div class="footer-links">
+                <h3>Tautan Penting</h3>
+                <ul>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Tentang Kami</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Produk</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">Kontak</a></li>
+                    <li><a href="https://fbrynn14.github.io/Website-Personal/">FAQ</a></li>
+                </ul>
+            </div>
+            <!-- Kontak Kami -->
+            <div class="footer-contact">
+                <h3>Kontak Kami</h3>
+                <p>Email: akbarfebriyan69@gmail.com</p>
+                <p>Telepon: +62 857-1104-5653</p>
+                <div class="social-media">
+                    <a href="https://web.facebook.com/makbarfebriyan.akbarfebriyan.7/"><img src="asset/fb.png"
+                            alt="Facebook"></a>
+                    <a href="https://fbrynn14.github.io/Website-Personal/"><img src="asset/logoweb.png"
+                            alt="Web Kami"></a>
+                    <a href="https://www.instagram.com/mhmd_abr14/"><img src="asset/ig.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-Commerce. Jangan Pernah Bosan Untuk Membaca.</p>
+        </div>
+    </footer>
+    <!-- akhir footer -->
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+        // Mengambil elemen HTML yang diperlukan
+        const metodePembayaran = document.getElementById('metodePembayaran');
+        const infoPembayaran = document.getElementById('infoPembayaran');
+
+        // Event listener untuk dropdown metode pembayaran
+        metodePembayaran.addEventListener('change', () => {
+            const metode = metodePembayaran.value;
+            if (metode === 'Virtual Account') {
+                // Tampilkan nomor rekening untuk Virtual Account
+                infoPembayaran.innerHTML = `
+            <p>Nomor Rekening: <b>1550013946556 (Bank Mandiri)</b></p>
+            <p>Harap transfer ke rekening di atas untuk menyelesaikan pembayaran.</p>
+        `;
+            } else if (metode === 'QRIS') {
+                // Tampilkan barcode untuk QRIS
+                infoPembayaran.innerHTML = `
+            <img src="asset/barcode.jpeg" alt="QRIS" style="width: 150px; height: auto;">
+            <p>Scan QR untuk pembayaran melalui DANA: <b>085711045653</b></p>
+        `;
+            } else if (metode === 'COD') {
+                // Tampilkan informasi untuk COD
+                infoPembayaran.innerHTML = `
+            <p>Pesanan Anda akan dibayar saat pengiriman (COD).</p>
+        `;
+            } else {
+                // Bersihkan informasi jika tidak ada pilihan
+                infoPembayaran.innerHTML = '';
+            }
+        });
+
+        // Mengambil data dari URL query string
+        const params = new URLSearchParams(window.location.search);
+        const namaProduk = params.get('nama');
+        const hargaProduk = params.get('harga');
+
+        // Menampilkan data pada form
+        document.getElementById('namaProduk').value = namaProduk;
+        document.getElementById('hargaProduk').value = hargaProduk;
+
+        // Menghitung total harga
+        const jumlahInput = document.getElementById('jumlah');
+        const totalHargaInput = document.getElementById('totalHarga');
+        const harga = parseFloat(hargaProduk);
+
+        function updateTotalHarga() {
+            const jumlah = parseInt(jumlahInput.value);
+            const total = harga * jumlah;
+            totalHargaInput.value = `Rp ${total.toLocaleString()}`;
+        }
+
+        jumlahInput.addEventListener('input', updateTotalHarga);
+        updateTotalHarga(); // Hitung saat halaman dimuat
+
+        // Menangani proses pesanan
+        const prosesPesananButton = document.getElementById('prosesPesanan');
+        prosesPesananButton.addEventListener('click', function () {
+            const alamat = document.getElementById('alamat').value;
+            const metode = metodePembayaran.value;
+
+            if (!alamat.trim() || !metode) {
+                alert('Silakan lengkapi semua data termasuk metode pembayaran!');
+                return;
+            }
+
+            // Data transaksi
+            const transaksi = {
+                namaTransaksi: namaProduk,
+                jumlah: jumlahInput.value,
+                kategori: hargaProduk,
+                metodePembayaran: metode
+            };
+
+            const transaksiList = JSON.parse(localStorage.getItem('transaksi')) || [];
+            transaksiList.push(transaksi);
+            localStorage.setItem('transaksi', JSON.stringify(transaksiList));
+
+            if (confirm('Pesanan berhasil diterima! Apakah Anda ingin melihat daftar transaksi?')) {
+                window.location.href = 'daftartransaksi.html';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

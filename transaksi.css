@@ -1,0 +1,418 @@
+/* Umum */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Pastikan semua elemen tidak melampaui layar */
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
+    /* Warna gradasi untuk navbar */
+    height: 60px;
+    /* Tinggi navbar */
+    display: flex;
+    justify-content: space-between;
+    /* Menempatkan elemen di kiri dan kanan */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.atas {
+    display: flex;
+    align-items: center;
+}
+
+.atas a {
+    text-decoration: none;
+    /* Menghapus garis bawah pada tautan */
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.atas img {
+    height: 40px;
+    /* Tinggi logo */
+    width: auto;
+    /* Lebar disesuaikan secara proporsional */
+}
+
+/* Default menu tampil horizontal */
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+    /* Animasi garis */
+}
+
+.menu a:hover {
+    color: #FFD700;
+    /* Warna teks saat hover */
+}
+
+.menu a:hover::after {
+    width: 100%;
+    /* Garis melebar penuh saat hover */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.transaction-form, .transaction-list {
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form select, form button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form input:focus, form select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background: #4CAF50;
+    color: white;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+table td:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+.link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.link-button:hover {
+    background: #1976D2;
+    transform: translateY(-3px);
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.footer-about p,
+.footer-contact p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.footer-links ul {
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    margin-right: 10px;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid rgb(255, 255, 255);
+    padding-top: 10px;
+    font-size: 0.8rem;
+}
+
+/* Style menu dropdown untuk layar kecil */
+@media (max-width: 500px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(90deg, #4CAF50, #2196F3);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: auto;
+        padding: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .menu a {
+        color: white;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    /* Toggle menu button */
+    .toggle-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toggle-menu div {
+        background-color: white;
+        height: 3px;
+        width: 25px;
+        margin: 3px 0;
+        transition: 0.3s;
+    }
+}
+
+/* Menu tampil horizontal untuk layar lebih besar dari 500px */
+@media (min-width: 501px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .menu li {
+        margin-left: 20px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Tombol toggle-menu tidak diperlukan pada ukuran layar besar */
+    .toggle-menu {
+        display: none;
+    }
+}
+
+/* Responsivitas Footer */
+@media (max-width: 768px) {
+
+    /* Konten utama */
+    .content {
+        padding: 15px;
+    }
+
+    .content h1 {
+        font-size: 1.5rem;
+        /* Ukuran heading disesuaikan */
+    }
+
+    .content {
+        padding: 10px;
+        /* Padding lebih kecil */
+    }
+
+    * Grid produk responsif */
+.product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    /* Kurangi jarak antar kartu pada tampilan kecil */
+}
+
+/* Kartu produk responsif */
+.product-card img {
+    width: 50%;
+    /* Gambar produk lebih besar pada perangkat kecil */
+}
+
+.product-card {
+    padding: 10px;
+    /* Padding lebih kecil untuk menyesuaikan ruang */
+}
+
+.product-card h3 {
+    font-size: 1rem;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+}
+
+.product-card button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+}
+
+
+.footer-container {
+    flex-direction: column;
+    /* Mengatur elemen menjadi vertikal */
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+    width: 100%;
+    /* Lebar penuh pada layar kecil */
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    /* Menghapus bullet pada list */
+    padding: 0;
+}
+
+.footer-bottom {
+    font-size: 0.75rem;
+    margin-top: 10px;
+}
+}
+

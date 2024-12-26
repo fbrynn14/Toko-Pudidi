@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="asset/keranjang-removebg-preview.png">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="return validateForm()">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan password">
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p class="register-link">Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+        </div>
+    </div>
+
+    <!-- awal javascript -->
+    <script>
+        // Fungsi validasi form
+        function validateForm() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Validasi input username
+            if (username === '') {
+                alert('Username tidak boleh kosong.');
+                return false; // Mencegah form dikirim
+            }
+
+            // Validasi input password
+            const passwordPattern = /^\d{6}$/; // Regex untuk memeriksa 6 angka
+            if (password === '') {
+                alert('Password tidak boleh kosong.');
+                return false; // Mencegah form dikirim
+            } else if (!passwordPattern.test(password)) {
+                alert('Password harus berupa 6 angka.');
+                return false; // Mencegah form dikirim
+            }
+
+            // Validasi berhasil
+            alert('Login berhasil!');
+            // Alihkan ke beranda
+            window.location.href = 'home.html';
+            return false; // Menghentikan pengiriman form ke server
+        }
+    </script>
+    <!-- akhir javascript -->
+</body>
+
+</html>
